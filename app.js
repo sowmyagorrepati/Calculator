@@ -8,7 +8,12 @@ function deletebtn() {
 }
 
 function solve(value) {
-    document.querySelector('.display').value += value;
+    let display = document.querySelector('.display');
+    if (value === '%') {
+        display.value += '/100'; 
+    } else {
+        display.value += value;
+    }
 }
 
 function res() {
@@ -19,3 +24,4 @@ function res() {
         display.value = 'Error';
     }
 }
+
